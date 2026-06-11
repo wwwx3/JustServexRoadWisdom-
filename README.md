@@ -375,7 +375,7 @@ Prototype จะถือว่าทำงานได้ หากสามา
 | Chayanoth Apanikanon   | Co-project lead / Researcher         | Research, Problem Analysis, Evidence-based Reasoning                   |
 | Chatnatda Ovatanupat   | Developer                            | Web App Flow, Risk Scoring Logic, AI/ML Concept, Prototype Integration |
 | Anchasa Kasaluck       | Project Lead / Designer / Researcher | UX/UI Design, Research, Presentation, Team Coordination                |
-| Thitikorn Worakitpanit | Developer                            | Web App Prototyping, Programming, Debugging, System Support            |
+| Thitikorn Worakitpanit | Developer                            | Web App Prototyping, Programming, AI/ML Concept,Debugging, System Support            |
 
 ---
 
