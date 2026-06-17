@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Road Wizdom — ระบบจัดการเรื่องร้องเรียนจราจร กทม.</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🚦 Road Wizdom</h1>
+    <p>ระบบจัดการเรื่องร้องเรียนจราจรกรุงเทพมหานคร — แจ้ง · จัดลำดับด้วย AI · ติดตาม · วัดผล</p>
+    <nav>
+      <button class="tab active" data-tab="report">📸 แจ้งปัญหา</button>
+      <button class="tab" data-tab="dashboard">🗂️ Dashboard เจ้าหน้าที่</button>
+      <button class="tab" data-tab="analytics">📊 Analytics</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- แจ้งปัญหา -->
+    <section id="tab-report" class="panel active">
+      <div class="grid2">
+        <div>
+          <h2>แจ้งปัญหาจราจร</h2>
+          <form id="report-form">
+            <label>ประเภทปัญหา
+              <select id="category" required></select>
+            </label>
+            <label>รายละเอียด (ไม่บังคับ — AI ช่วยเขียนให้)
+              <textarea id="description" rows="3" placeholder="เช่น รถเก๋งสีขาวจอดขวางปากซอย"></textarea>
+            </label>
+            <label>รูปถ่าย (ไม่บังคับ)
+              <input type="file" id="photo" accept="image/*" />
+            </label>
+            <p class="hint">📍 แตะบนแผนที่เพื่อระบุตำแหน่งเหตุการณ์</p>
+            <p id="coords" class="coords">ยังไม่ได้เลือกตำแหน่ง</p>
+            <button type="submit" class="primary">ส่งรายงาน</button>
+          </form>
+          <div id="report-result" class="result hidden"></div>
+        </div>
+        <div id="report-map" class="map"></div>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="tab-dashboard" class="panel">
+      <div class="grid2">
+        <div>
+          <h2>เคสเรียงตาม Risk Score</h2>
+          <div id="case-list"></div>
+        </div>
+        <div>
+          <div id="dash-map" class="map"></div>
+          <div id="case-detail" class="detail hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analytics -->
+    <section id="tab-analytics" class="panel">
+      <h2>ภาพรวมเมือง</h2>
+      <div id="analytics-totals" class="totals"></div>
+      <div class="grid2">
+        <div>
+          <h3>จำนวนเคสตามประเภท</h3>
+          <div id="chart-category"></div>
+        </div>
+        <div>
+          <h3>Top 5 เคสเสี่ยงสูงที่ยังไม่แก้</h3>
+          <div id="top-risk"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Open Source Civic Tech · สร้างเพื่อ HackaTech Bangkok 2569 · ข้อมูลตัวอย่างอ้างอิงสถิติ Traffy Fondue</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
